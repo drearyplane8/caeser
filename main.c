@@ -7,7 +7,7 @@ void encrypt(char *string, int offset) {
     unsigned len = strlen(string);
     for (int i = 0; i < len; ++i) {
         char cha = string[i]; //create a local var of the character to save assignment and typing, will set to in string later
-        tolower(cha); // set the character to lower case
+        cha = tolower(cha); // set the character to lower case
         if (isalpha(cha) == 0) { //skip if the character is not alphabetical
             continue;
         }
@@ -25,7 +25,7 @@ void decrypt(char *string, int offset) {
     unsigned len = strlen(string);
     for (int i = 0; i < len; ++i) {
         char cha = string[i]; //create a local var of the character to save assignment and typing, will set to in string later
-        tolower(cha); // set the character to lower case
+        cha = tolower(cha); // set the character to lower case
         if (isalpha(cha) == 0) { //skip if the character is not alphabetical
             continue;
         }
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
     }
 
     //get the string to use from the third argument
-    unsigned len = strlen(argv[2]);
+    unsigned len = strlen(argv[2]) + 1;
     char str[len];
     strcpy(str, argv[2]);
 
